@@ -1,0 +1,52 @@
+
+#  Copyright  2020 Alexis Lopez Zubieta
+#
+#  Permission is hereby granted, free of charge, to any person obtaining a
+#  copy of this software and associated documentation files (the "Software"),
+#  to deal in the Software without restriction, including without limitation the
+#  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+#  sell copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+#
+#  The above copyright notice and this permission notice shall be included in
+#  all copies or substantial portions of the Software.
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "appimage_builder"
+authors = [
+  { name = "Alexis Lopez Zubieta", email="contact@azubieta.net" },
+]
+description="Recipe based AppImage creation meta-tool"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+license = {text = "MIT" }
+dependencies = [
+    "pyyaml>=5",
+    "docker",
+    "requests",
+    "schema",
+    "packaging",
+    "questionary",
+    "emrichen",
+    "ruamel.yaml",
+    "roam",
+    "urllib3",
+    "lief",
+    "python-gnupg",
+    "libconf",
+    "pydpkg",
+]
+dynamic = ["version", "readme"]
+
+[project.urls]
+"Homepage" = "https://github.com/AppImageCrafters/appimage-builder"
+"Bug Tracker" = "https://github.com/AppImageCrafters/appimage-builder/issues"
+"Documentation" = "https://appimage-builder.readthedocs.io"
+"Source Code" = "https://github.com/AppImageCrafters/appimage-builder"

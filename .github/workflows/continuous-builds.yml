@@ -24,7 +24,7 @@ jobs:
         run: |
           git config --global --add safe.directory $PWD
           git fetch --prune --unshallow
-          python3 -m pip install -e .[dev]
+          python3.11 -m pip install -e .[dev]
       - name: Run pytest
         run: python3 -m unittest
 
@@ -39,12 +39,12 @@ jobs:
         run: |
           git config --global --add safe.directory $PWD
           git fetch --prune --unshallow
-          python3 -m pip install -e .[dev]
+          python3.11 -m pip install -e .[dev]
       - name: Run pytest
         run: python3 -m unittest
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: [ pytest-ubuntu-jammy, pytest-archlinux ]
     steps:
       - name: Install dependencies

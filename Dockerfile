@@ -15,7 +15,7 @@ RUN apt-get update && \
         libglib2.0-bin \
         librsvg2-dev \
         libyaml-dev \
-        python3 \
+        python3.11 \
         python3-pip \
         python3-setuptools \
         strace \
@@ -31,7 +31,7 @@ RUN wget https://github.com/NixOS/patchelf/releases/download/0.17.2/patchelf-0.1
     rm -rf patchelf-*
 
 ADD . /opt/appimage-builder
-RUN python3 -m pip install /opt/appimage-builder
+RUN python3.11 -m pip install /opt/appimage-builder
 RUN rm -rf /opt/appimage-builder
 
 WORKDIR /
