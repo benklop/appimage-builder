@@ -12,7 +12,7 @@
 #  all copies or substantial portions of the Software.
 
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=64.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
