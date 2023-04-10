@@ -22,7 +22,7 @@ AppDir:
     sources:
       - sourceline: 'deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse'
       - sourceline: 'deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse'
-        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
+        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x871920D1991BC93C'
 
     include:
       - bash
@@ -46,8 +46,8 @@ AppDir:
     ln -s bash $TARGET_APPDIR/bin/sh
 
     # install appimage-builder
-    python3.11 -m pip install --ignore-installed --prefix=/usr --root="$TARGET_APPDIR"  install ../../
-    python3.11 -m pip install --ignore-installed --prefix=/usr --root="$TARGET_APPDIR"  install certifi
+    python3 -m pip install --ignore-installed --prefix=/usr --root="$TARGET_APPDIR"  install ../../
+    python3 -m pip install --ignore-installed --prefix=/usr --root="$TARGET_APPDIR"  install certifi
 
   runtime:
     version: "continuous"
