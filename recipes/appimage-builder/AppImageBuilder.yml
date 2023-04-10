@@ -34,20 +34,20 @@ AppDir:
       - fakeroot
       - libgdk-pixbuf2.0-dev
       - patchelf
-      - python3.8
+      - python3
       - squashfs-tools
       - strace
       - zsync
     exclude: []
 
   after_bundle: |
-    # configure tools 
+    # configure tools
     ln -s fakeroot-sysv $TARGET_APPDIR/usr/bin/fakeroot
     ln -s bash $TARGET_APPDIR/bin/sh
 
     # install appimage-builder
-    python3.8 -m pip install --ignore-installed --prefix=/usr --root="$TARGET_APPDIR"  install ../../
-    python3.8 -m pip install --ignore-installed --prefix=/usr --root="$TARGET_APPDIR"  install certifi
+    python3 -m pip install --ignore-installed --prefix=/usr --root="$TARGET_APPDIR"  install ../../
+    python3 -m pip install --ignore-installed --prefix=/usr --root="$TARGET_APPDIR"  install certifi
 
   runtime:
     version: "continuous"
@@ -83,4 +83,3 @@ AppImage:
   update-information: 'gh-releases-zsync|AppImageCrafters|appimage-builder|latest|-*x86_64.AppImage.zsync'
   sign-key: None
   arch: x86_64
-
