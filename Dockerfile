@@ -18,6 +18,7 @@ RUN apt-get update && \
         python3.11 \
         python3-pip \
         python3-setuptools \
+        patchelf \
         strace \
         wget \
         zsync && \
