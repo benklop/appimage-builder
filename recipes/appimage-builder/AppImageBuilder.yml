@@ -38,6 +38,7 @@ AppDir:
       - squashfs-tools
       - strace
       - zsync
+      - gnupg2
     exclude: []
 
   after_bundle: |
