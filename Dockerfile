@@ -23,13 +23,6 @@ RUN apt-get update && \
         zsync && \
     apt-get -yq autoclean
 
-WORKDIR /tmp
-RUN wget https://github.com/NixOS/patchelf/releases/download/0.17.2/patchelf-0.17.2.tar.bz2; \
-    tar -xvf patchelf-0.17.2.tar.bz2;  \
-    cd patchelf-0.17.2; \
-    ./configure && make && make install; \
-    rm -rf patchelf-*
-
 ADD . /opt/appimage-builder
 RUN python3.11 -m pip install /opt/appimage-builder
 RUN rm -rf /opt/appimage-builder

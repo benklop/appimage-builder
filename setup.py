@@ -56,6 +56,7 @@ setuptools.setup(
         "urllib3",
         "lief",
         "python-gnupg",
+        "pgpy",
         "libconf",
         "pydpkg",
     ],
