@@ -39,6 +39,7 @@ AppDir:
       - strace
       - zsync
       - gnupg2
+      - libyaml
     exclude: []
 
   after_bundle: |
