@@ -48,10 +48,30 @@ jobs:
     needs: [ pytest-ubuntu-jammy, pytest-archlinux ]
     steps:
       - name: Install dependencies
+              breeze-icon-theme \
         run: |
-          sudo apt install -y python3.11-minimal python3-pip python3-setuptools patchelf desktop-file-utils libgdk-pixbuf2.0-dev libyaml-dev fakeroot strace git
+          sudo apt install -y \
+            desktop-file-utils \
+            elfutils \
+            fakeroot \
+            file \
+            git \
+            gnupg2 \
+            gtk-update-icon-cache \
+            libgdk-pixbuf2.0-dev \
+            libglib2.0-bin \
+            librsvg2-dev \
+            libyaml-dev \
+            python3.11 \
+            python3-pip \
+            python3-setuptools \
+            patchelf \
+            strace \
+            wget \
+            zsync
           sudo wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage -O /usr/local/bin/appimagetool
           sudo chmod +x /usr/local/bin/appimagetool
+
       - uses: actions/checkout@v3
       - name: Install appimage-builder
         run: |
